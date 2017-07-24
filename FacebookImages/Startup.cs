@@ -51,9 +51,17 @@ namespace FacebookImages
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+              //routes.MapRoute("viaja", "viaja/{*article}",
+              // defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+
+              routes.MapRoute(
+         name: "default",
+         template: "viaja/{id?}",
+         defaults: new { controller = "Home", action = "Index" });
+
+              //routes.MapRoute(
+              //      name: "default",
+              //      template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
